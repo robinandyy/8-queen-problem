@@ -1,15 +1,12 @@
-def evaluation(genome_length, population):
-    fitness = []
+def evaluation(individual):
     score = 0
 
 
-    for i in range(population):
-        for j in range(genome_length):
-            if population[i][j]
-            if abs(population[i] - population[j] == abs(i - j)
+    for i in range(len(individual)):
+        for j in range(len(individual)):
+            if individual[i] - individual[j] == i - j:
                 score -= 10
-        fitness.append(score)
-
-    return fitness
     
+    return score
 
+    

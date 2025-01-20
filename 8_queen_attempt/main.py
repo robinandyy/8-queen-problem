@@ -1,5 +1,6 @@
 # imports
 import initialize
+import evaluate
 
 
 # set up variables
@@ -20,4 +21,9 @@ generation = 0
 # create population
 population = initialize.random_permutation(pop_size, string_length)
 
-fitness = 
+
+fitness = []
+for i in range(len(population)):
+    fitness.append(evaluate.evaluation(population[i]))
+
+print(fitness)
