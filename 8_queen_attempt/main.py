@@ -1,6 +1,8 @@
 # imports
+import random
 import initialize
 import evaluate
+import parent_selection
 
 
 # set up variables
@@ -26,4 +28,25 @@ fitness = []
 for i in range(len(population)):
     fitness.append(evaluate.evaluation(population[i]))
 
-print(fitness)
+
+
+print(f"Generation: {generation} best fitness: {max(fitness)} average fitness: {sum(fitness)/len(fitness)}")
+
+while generation < 1:
+
+    if parent_selection_method == "MPS":
+        pass
+    elif parent_selection_method == "tournament":
+        parents = parent_selection.tournament(population, mating_pool_size, fitness, tournament_size)
+        print(parents)
+    else: # random uniform
+        pass
+
+
+    generation += 1
+    
+    offspring = []
+    offspring_fitness = []
+    # while len(offspring) < mating_pool_size:
+    #     if random.random() < crossover_rate:
+    #         offspring1, offspring2 = recombination.cut_and_crossfill()
