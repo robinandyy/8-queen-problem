@@ -17,4 +17,12 @@ def tournament(population, mating_pool_size, fitness, tournament_size):
     return parents
 
 
-# def random_uniform():
+def random_uniform(population, mating_pool_size):
+    parents = []
+
+    while len(parents) < mating_pool_size:
+        parents = random.sample(population, mating_pool_size)
+
+    return parents
+
+
